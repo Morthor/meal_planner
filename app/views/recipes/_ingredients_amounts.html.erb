@@ -1,8 +1,12 @@
-<%= form.fields_for :ingredients_amounts do |ingredients_amounts| %>
+<% @recipe.ingredients_amounts.each do |ingredient_amount| %>
   <li>
-    <%= ingredients_amounts.select :ingredient_id, @ingredients.collect {|p| [ p.name, p.id ] } %>
-    <%= ingredients_amounts.text_field :amount %>
-    <%= ingredients_amounts.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]] %>
-    "Eliminar"
+    <%= form.fields_for :ingredients_amounts, ingredient_amount do |ingredients_amounts_item| %>
+      <%= ingredients_amounts_item.select :ingredient_id, @ingredients.collect {|p| [ p.name, p.id ] } %>
+      <%= ingredients_amounts_item.text_field :amount %>
+      <%= ingredients_amounts_item.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]] %>
+      <% if ingredient_amount.id %>
+        <%= link_to 'Destroy', ingredients_amount_path(ingredient_amount), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_ingredient_amount' %>
+      <% end %>
+    <% end %>
   </li>
 <% end %>
