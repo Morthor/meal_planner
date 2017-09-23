@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if controller_name != "home" %>
+      <%= link_to 'Back home', root_path %> |
+    <% end %>
+    <%= link_to "Back to previous page", :back %>
+
     <%= yield %>
   </body>
 </html>

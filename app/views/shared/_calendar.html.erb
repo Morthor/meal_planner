@@ -1,0 +1,7 @@
+<%= month_calendar do |date| %>
+  <%= date.day %>
+  <ul>
+    <li><%= link_to_show_or_add_meal :lunch, date %></li>
+    <li><%= link_to_show_or_add_meal :dinner, date %></li>
+  </ul>
+<% end %>

@@ -1,0 +1,5 @@
+<h1>Pick a recipe to have <%= params[:kind] %> on <%= params[:date] %> </h1>
+
+<%= render 'form', meal: @meal %>
+
+<%= link_to 'Back', root_path %>

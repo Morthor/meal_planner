@@ -1,0 +1,8 @@
+<%= form.fields_for :ingredients_amounts do |ingredients_amounts| %>
+  <li>
+    <%= ingredients_amounts.select :ingredient_id, @ingredients.collect {|p| [ p.name, p.id ] } %>
+    <%= ingredients_amounts.text_field :amount %>
+    <%= ingredients_amounts.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]] %>
+    "Eliminar"
+  </li>
+<% end %>

@@ -1,0 +1,5 @@
+<ul>
+  <% recipe.ingredients_amounts.each do |ingredient_amount| %>
+    <li><%= ingredient_amount.ingredient.name %> <%= ingredient_amount.amount %> <%= ingredient_amount.units %></li>
+  <% end %>
+</ul>
