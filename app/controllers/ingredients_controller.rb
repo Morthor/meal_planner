@@ -17,7 +17,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to edit_ingredient_path @ingredient, notice: 'Ingredient was successfully created.' }
+        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully created.' }
       else
         format.html { render :new }
       end
@@ -27,7 +27,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to edit_ingredient_path @ingredient, notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -50,6 +50,6 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.fetch(:name, {})
+      params.require(:ingredient).permit(:name)
     end
 end

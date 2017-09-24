@@ -1,19 +1,16 @@
 class MealsController < ApplicationController
-  before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :set_meal, only: [:edit, :update, :destroy]
   before_action :load_recipes, only: [:new, :edit]
 
-  def show
-  end
-
   def new
-    @meal = Meal.new
+    @meal = Meal.new(family: current_family)
   end
 
   def edit
   end
 
   def create
-    @meal = Meal.new(meal_params)
+    @meal = Meal.new(meal_params.merge(family_id: current_family.id))
 
     respond_to do |format|
       if @meal.save
@@ -49,7 +46,7 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:kind, :date, :recipe_id)
+      params.require(:meal).permit(:kind, :date, :recipe_id, :family_id)
     end
 
     def load_recipes

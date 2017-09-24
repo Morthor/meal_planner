@@ -1,12 +1,13 @@
 class Meal < ApplicationRecord
   belongs_to :recipe
+  belongs_to :family
 
   enum kind: [ :lunch, :dinner ]
 
-  def self.from_week year, week_number
+  def self.from_week family, year, week_number
     start_of = Meal.start_of_week(year, week_number)
     end_of = Meal.end_of_week(year, week_number)
-    Meal.where(date: start_of..end_of)
+    Meal.where(family: family, date: start_of..end_of)
   end
 
   def self.start_of_week(year, week_number)

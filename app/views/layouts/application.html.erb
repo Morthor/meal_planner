@@ -9,10 +9,13 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <% if controller_name != "home" %>
       <%= link_to 'Back home', root_path %> |
     <% end %>
-    <%= link_to "Back to previous page", :back %>
+    <%= link_to "Back to previous page", :back %> |
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
 
     <%= yield %>
   </body>

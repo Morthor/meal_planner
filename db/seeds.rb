@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Until a better way comes to my mind, families will be created manually
+Family.create(description: "Bárbara & Juanmi")
+Family.create(description: "Agata & João")
