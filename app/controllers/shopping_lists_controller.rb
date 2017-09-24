@@ -3,11 +3,11 @@ class ShoppingListsController < ApplicationController
   before_action :check_shopping_list, only: :new
 
   def index
-    @shopping_lists = ShoppingList.all
+    @shopping_lists = current_family.shopping_lists
   end
 
   def new
-    @shopping_list = ShoppingList.new(year: params[:year], week_number: params[:week_number])
+    @shopping_list = current_family.shopping_lists.build(year: params[:year], week_number: params[:week_number])
     @shopping_list.initialize_list_items
     @shopping_list.shopping_list_items.build
   end
@@ -54,11 +54,11 @@ class ShoppingListsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shopping_list_params
       params[:shopping_list_items_attributes]
-      params.require(:shopping_list).permit(:year, :week_number, shopping_list_items_attributes: [:id, :name, :amount, :units, :bought])
+      params.require(:shopping_list).permit(:year, :week_number, :family_id, shopping_list_items_attributes: [:id, :name, :amount, :units, :bought])
     end
 
     def check_shopping_list
-      shopping_list = ShoppingList.where(year: params[:year], week_number: params[:week_number]).first
+      shopping_list = ShoppingList.where(year: params[:year], week_number: params[:week_number], family: current_family).first
       if shopping_list
         redirect_to edit_shopping_list_path(shopping_list)
       end

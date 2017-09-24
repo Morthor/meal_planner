@@ -1,11 +1,12 @@
 class ShoppingList < ApplicationRecord
   has_many :shopping_list_items, dependent: :destroy
+  belongs_to :family
 
   accepts_nested_attributes_for :shopping_list_items, :reject_if => proc { |attributes| attributes['name'].blank? }
 
   def initialize_list_items
     # initialise items with name, amount, units
-    meals = Meal.from_week(year, week_number)
+    meals = Meal.from_week(family, year, week_number)
     meals.each do |meal|
       meal.recipe.ingredients_amounts.each do |ingredients_amounts|
         shopping_list_items << ShoppingListItem.new(
