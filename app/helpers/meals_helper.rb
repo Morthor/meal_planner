@@ -8,4 +8,12 @@ module MealsHelper
       link_to kind, new_meal_path(date: date, kind: kind)
     end
   end
+
+  def lunch_for date
+    Meal.where(date: date, kind: :lunch)
+  end
+
+  def dinner_for date
+    Meal.where(date: date, kind: :dinner)
+  end
 end

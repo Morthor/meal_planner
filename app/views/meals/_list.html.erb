@@ -1,0 +1,11 @@
+<div><span><%= kind %>:</span>
+  <ul>
+    <% eval("#{kind}_for(date)").each do |meal| %>
+      <li>
+        <%= link_to meal.recipe.name, edit_meal_path(meal) %> |
+        <%= link_to 'X', meal_path(meal), method: :delete, remote: true, class: 'delete_meal' %>
+      </li>
+    <% end %>
+    <li><%= link_to "add #{kind}", new_meal_path(date: date, kind: kind) %></li>
+  </ul>
+</div>

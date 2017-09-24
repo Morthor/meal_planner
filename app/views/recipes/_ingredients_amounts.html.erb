@@ -5,7 +5,7 @@
       <%= ingredients_amounts_item.text_field :amount %>
       <%= ingredients_amounts_item.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]] %>
       <% if ingredient_amount.id %>
-        <%= link_to 'Destroy', ingredients_amount_path(ingredient_amount), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_ingredient_amount' %>
+        <%= link_to 'Remove', ingredients_amount_path(ingredient_amount), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_ingredient_amount' %>
       <% end %>
     <% end %>
   </li>

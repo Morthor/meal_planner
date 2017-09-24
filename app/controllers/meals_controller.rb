@@ -37,8 +37,7 @@ class MealsController < ApplicationController
   def destroy
     @meal.destroy
     respond_to do |format|
-      format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js   { render layout: false }
     end
   end
 
