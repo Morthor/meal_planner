@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925170637) do
+ActiveRecord::Schema.define(version: 20170925194157) do
 
   create_table "families", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "description"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170925170637) do
   create_table "ingredients_amounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "recipe_id", null: false
     t.integer "ingredient_id", null: false
-    t.decimal "amount", precision: 10
+    t.decimal "amount", precision: 10, scale: 2
     t.integer "units"
   end
 
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170925170637) do
   create_table "shopping_list_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "shopping_list_id"
     t.string "name"
-    t.decimal "amount", precision: 10
+    t.decimal "amount", precision: 10, scale: 2
     t.integer "units"
     t.boolean "bought", default: false
     t.datetime "created_at", null: false
