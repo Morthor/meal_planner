@@ -14,10 +14,13 @@ gem 'devise', '~> 4.3.0'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Added bootstrap sass
-gem 'bootstrap-sass', '~> 3.3'
+
 gem 'jquery-rails', '~> 4.3.1'
 gem "simple_calendar", "~> 2.0"
+
+# Add Bootstrap for styling
+gem 'sprockets-rails', '~> 3.2.1'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

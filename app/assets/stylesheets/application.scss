@@ -1,5 +1,42 @@
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
  @import "simple_calendar";
  @import "scaffolds";
+ @import "bootstrap";
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  background-color: #9B9B9B;
+  color: #ffffff;
+}
+
+.nav-custom .nav-item.active .nav-link,
+.nav-custom .nav-item:hover .nav-link {
+  background-color: #9B9B9B;
+  color: #ffffff;
+}
+
+.nav-brand-custom:hover {
+  background-color: #9B9B9B;
+  color: #ffffff;
+}
+
+.navbar-nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .nav-item {
+    font-size: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .logout-link a.nav-link{
+    color: #9E2020;
+    &:hover {
+      color: #F00909;
+    }
+  }
+}
+
+.nav {
+  margin-top: 15px;
+  margin-bottom: 15px; 
+}
