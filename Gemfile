@@ -22,6 +22,12 @@ gem "simple_calendar", "~> 2.0"
 gem 'sprockets-rails', '~> 3.2.1'
 gem 'bootstrap', '~> 4.0.0.beta'
 
+# Font Awesome
+gem 'font-awesome-sass'
+
+# Select 2 for better select fields
+gem 'select2-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
