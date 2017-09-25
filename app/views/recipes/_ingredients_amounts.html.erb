@@ -1,11 +1,13 @@
 <% @recipe.ingredients_amounts.each do |ingredient_amount| %>
-  <li>
+  <li class="list-group-item">
     <%= form.fields_for :ingredients_amounts, ingredient_amount do |ingredients_amounts_item| %>
-      <%= ingredients_amounts_item.select :ingredient_id, @ingredients.collect {|p| [ p.name, p.id ] } %>
+      <%= ingredients_amounts_item.select :ingredient_id, @ingredients.collect {|p| [ p.name, p.id ] }, {}, { class: 'ingredient-select-in-recipes' } %>
       <%= ingredients_amounts_item.text_field :amount %>
-      <%= ingredients_amounts_item.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]] %>
+      <%= ingredients_amounts_item.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]], {}, { class: 'ingredient-amounts-select-in-recipes' } %>
       <% if ingredient_amount.id %>
-        <%= link_to 'Remove', ingredients_amount_path(ingredient_amount), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_ingredient_amount' %>
+        <%= link_to ingredients_amount_path(ingredient_amount), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_ingredient_amount' do %>
+          <i class="fa fa-trash fa-lg delete-row"></i>
+        <% end %>
       <% end %>
     <% end %>
   </li>

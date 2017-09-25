@@ -1,5 +1,5 @@
-<ul>
+<ul class="list-group">
   <% recipe.ingredients_amounts.each do |ingredient_amount| %>
-    <li><%= ingredient_amount.ingredient.name %> <%= ingredient_amount.amount %> <%= ingredient_amount.units %></li>
+    <li class="list-group-item"><%= ingredient_amount.ingredient.name %> <%= ingredient_amount.amount %> <%= ingredient_amount.units %></li>
   <% end %>
 </ul>

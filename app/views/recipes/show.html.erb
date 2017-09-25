@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p><%= @recipe.name.capitalize %></p>
+<h3><%= @recipe.name.capitalize %></h3>
 <%= render 'details', recipe: @recipe %>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

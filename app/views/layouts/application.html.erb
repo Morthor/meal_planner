@@ -51,7 +51,9 @@
           <div>
             <ul class="nav nav-custom">
               <li class="nav-item">
-                <%= link_to "< back to previous page", :back, class: "nav-link" %>
+                <%= link_to :back, class: "nav-link" do %>
+                <i class="fa fa-angle-left fa-lg fa-fw"></i> back to previous page
+                <% end %>
               </li>
             </ul>
           </div>
