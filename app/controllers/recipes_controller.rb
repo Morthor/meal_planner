@@ -23,8 +23,10 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to edit_recipe_path(@recipe), notice: 'Recipe was successfully created.' }
+        format.json { head :no_content }
       else
         format.html { render :new }
+        format.json { render json: @recipe.errors }
       end
     end
   end
@@ -33,8 +35,10 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to edit_recipe_path(@recipe), notice: 'Recipe was successfully updated.' }
+        format.json { head :no_content }
       else
         format.html { render :edit }
+        format.json { render json: @recipe.errors }
       end
     end
   end
