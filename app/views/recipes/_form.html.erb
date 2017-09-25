@@ -11,7 +11,24 @@
     </div>
   <% end %>
   <div class="form-group">
+    <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :author %>
+    <%= form.text_field :author, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label "Cook Time: Total time as free text" %>
+    <%= form.text_field :cook_time, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label "Number of servings" %>
+    <%= form.number_field :servings, class: "form-control" %>
   </div>
   <div class="form-group">
     <ul class="list-group">
