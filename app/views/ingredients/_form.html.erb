@@ -14,6 +14,11 @@
     <%= form.text_field :name, class: 'form-control' %>
   </div>
   <div class="actions  class="form-group"">
-    <%= form.submit 'Update Ingredient', class: 'btn btn-info' %>
+    <% if add_more %>
+      <%= form.submit 'Create and add more', class: 'btn btn-info' %>
+      <%= link_to 'List of ingredients', ingredients_path, class: 'btn' %>
+    <% else %>
+      <%= form.submit 'Update Ingredient', class: 'btn btn-info'%>
+    <% end %>
   </div>
 <% end %>
