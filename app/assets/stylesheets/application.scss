@@ -1,6 +1,7 @@
  @import "simple_calendar";
  @import "scaffolds";
  @import "recipes";
+ @import "ingredients";
  @import "select2";
  @import "font-awesome-sprockets";
  @import "font-awesome";
@@ -44,4 +45,14 @@
 .nav {
   margin-top: 15px;
   margin-bottom: 15px; 
+}
+
+.delete-row{
+  padding-left: 15px;
+  color: #BB1010;
+}
+
+.edit-row{
+  padding-left: 15px;
+  color: #000;
 }

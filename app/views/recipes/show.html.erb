@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @recipe.name.capitalize %></h3>
+<p><%= "Author: #{@recipe.author}| Origin: #{@recipe.origin}| Total cook time: #{@recipe.cook_time}| Servings:#{@recipe.servings}"%></p>
+
 <%= render 'details', recipe: @recipe %>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Until a better way comes to my mind, families will be created manually
-Family.create(description: "Bárbara & Juanmi")
-Family.create(description: "Agata & João")
+families = ["Bárbara & Juanmi", "Agata & João", "Gloria & Jose", "Vero & Andres"]
+families.each do |family|
+  Family.create(description: family) if Family.where(description: family).blank?
+end

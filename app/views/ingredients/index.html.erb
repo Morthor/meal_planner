@@ -2,7 +2,7 @@
 
 <h1>Ingredients</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th colspan="3"></th>
@@ -12,9 +12,17 @@
   <tbody>
     <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.name %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="ingredient-name-td"><%= ingredient.name.capitalize %></td>
+        <td class="ingredient-edit-td">
+          <a href="<%= edit_ingredient_path(ingredient) %>">
+            <i class="fa fa-pencil-square-o fa-lg edit-row"></i>
+          </a>
+        </td>
+        <td class="ingredient-delete-td">
+          <%= link_to ingredient, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash fa-lg delete-row"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= link_to 'New Ingredient', new_ingredient_path, class: 'btn btn-success' %>

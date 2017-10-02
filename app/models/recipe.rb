@@ -5,4 +5,7 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :ingredients_amounts, :reject_if => proc { |attributes| attributes['amount'].blank? }
   validates_presence_of :name
+  validates_uniqueness_of :name
+
+  default_scope { order(name: :asc) }
 end
