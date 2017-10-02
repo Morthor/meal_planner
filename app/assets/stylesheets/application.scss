@@ -9,6 +9,17 @@
  @import "font-awesome";
  @import "bootstrap";
 
+body{
+  margin-top: 70px;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  body{
+    margin-top: 50px;
+  }
+}
 
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
@@ -20,6 +31,14 @@
 .nav-custom .nav-item:hover .nav-link {
   background-color: #9B9B9B;
   color: #ffffff;
+}
+
+.navbar-custom {
+  box-shadow: 0 1px 10px;
+}
+
+.nav-brand-custom {
+  margin-right: 30px;
 }
 
 .nav-brand-custom:hover {
