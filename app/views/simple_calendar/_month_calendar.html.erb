@@ -8,35 +8,7 @@
     <i class="fa fa-arrow-circle-right fa-lg next-month-btn"></i>
     <% end %>
   </div>
-
-  <!-- <div class="calendar-wrapper">
-    <div class="calendar-header-div">
-      <% date_range.slice(0, 7).each do |day| %>
-        <th><%= t('date.day_names')[day.wday] %></th>
-      <% end %>
-    </div>
-
-    <div class="calendar-body">
-      <% date_range.each_slice(7) do |week| %>
-        <div class="calendar-row">
-          <% week_day = 1 %>
-          <% week.each do |day| %>
-            <% if week_day <= 7 %>
-              <div class="">
-            <% end %>
-            <%= content_tag :div, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-              <% else %>
-                <% block.call day, sorted_events.fetch(day, []) %>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div> -->
-
+ 
   <table class="table table-striped">
     <thead>
       <tr>

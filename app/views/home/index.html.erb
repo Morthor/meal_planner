@@ -1,12 +1,11 @@
-<div>
-  <h2>Calendar</h2>
-  <%= render "shared/calendar" %>
-</div>
-
-<div>
+<div class="shopping-list-container">
   <h2>Shopping List</h2>
   <%# TODO: Change this to depend on the month selected on the calendar  %>
   Shopping list for week <%= select_tag "shopping_list", options_for_select(render_week_options) %>
   <%= link_to "Go", "#", onclick: "window.location = '#{new_shopping_list_path}'+'?week_number='+$('#shopping_list option:selected').attr('week_number')+'&year='+$('#shopping_list option:selected').attr('year')" %>
 </div>
-<br/><br/><br/>
+
+<div class="calendar-container">
+  <h2>Calendar</h2>
+  <%= render "shared/calendar" %>
+</div>

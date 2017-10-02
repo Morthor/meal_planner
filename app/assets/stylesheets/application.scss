@@ -3,6 +3,7 @@
  @import "recipes";
  @import "ingredients";
  @import "meals";
+ @import "home";
  @import "select2";
  @import "font-awesome-sprockets";
  @import "font-awesome";
@@ -56,4 +57,8 @@
 .edit-row{
   padding-left: 15px;
   color: #000;
+}
+
+.bg-light{
+  background-color: #E4E3E3 !important;
 }
