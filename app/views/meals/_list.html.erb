@@ -1,11 +1,46 @@
-<div><span><%= kind %>:</span>
-  <ul>
-    <% eval("#{kind}_for(date)").each do |meal| %>
-      <li>
-        <%= link_to meal.recipe.name, edit_meal_path(meal) %> |
-        <%= link_to 'X', meal_path(meal), method: :delete, remote: true, class: 'delete_meal' %>
-      </li>
-    <% end %>
-    <li><%= link_to "add #{kind}", new_meal_path(date: date, kind: kind) %></li>
-  </ul>
+<% case kind %>
+  <% when :lunch %>
+    <% meal_class = 'lunch-time' %>
+  <% when :dinner %>
+    <% meal_class = 'dinner-time' %>
+  <% else %>
+    <% meal_class = '' %>
+<% end %>
+<div class="meal-time <%= meal_class %>">
+  <div class="meal-kind">
+    <div class="meal-icon">
+      <% case kind %>
+        <% when :lunch %>
+          <i class="fa fa-sun-o fa-2x"></i>
+        <% when :dinner %>
+          <i class="fa fa-moon-o fa-2x"></i>
+        <% else %>
+          <%= kind %>:
+      <% end %>
+    </div>
+    <div class="meal-list-add">
+      <%= link_to new_meal_path(date: date, kind: kind), class: 'meal-add-link' do %>
+        <i class="fa fa-plus meal-list-plus"></i><i class="fa fa-cutlery meal-list-cutlery"></i>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="meal-list-container">
+    <ul class="meal-list">
+      <% eval("#{kind}_for(date)").each do |meal| %>
+        <li>
+          <div class="meal-container">
+            <div class="meal-name-container">
+              <%= link_to meal.recipe.name, edit_meal_path(meal) %>
+            </div>
+            <div class="meal-delete-container">
+              <%= link_to meal_path(meal), method: :delete, remote: true, class: 'delete_meal' do %>
+                <i class="fa fa-times delete-meal"></i>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
