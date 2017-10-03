@@ -1,10 +1,10 @@
 # Meal Planner
 
-Do you have a busy live? Is it hard for you to plan your meals? Is your shopping list a mess and you have to go every day to the supermarket? If your answer is yes, this project is tailor made for you too.
+Do you have a busy life? Is it hard for you to plan your meals? Is your shopping list a mess and you have to go every day to the supermarket? If your answer is yes, this project is tailor made for you too.
 
-With Meal Planner you will be able to use and create recipes to plan your weekly meals and generate automatically a shopping list for your family needs.
+With Meal Planner you will be able to use and create recipes to plan your weekly meals and automatically generate a shopping list for your family needs.
 
-The project is in a very early stage and it is not recommended to be used in production yet due to several improvements needed and tests. Due to lack of time and resources, as in every OSS, any help and contribution is more than welcome.
+The project is in a very early stage and it is not recommended to be used in production yet, due to several improvements needed and tests. Due to lack of time and resources, as in every OSS, any help and contribution is more than welcome.
 
 ## Installation
 
@@ -57,6 +57,7 @@ TODO: Write credits
 
 ## Contributors
 
+João Soares (@Morthor)
 Contribute and add you name here :D
 
 ## License
