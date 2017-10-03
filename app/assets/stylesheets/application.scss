@@ -53,6 +53,11 @@ only screen and (max-width: 760px),
     font-size: 13px;
     padding-left: 8px;
     padding-right: 8px;
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      padding-top: 10px;
+    }
   }
 
   .logout-link a.nav-link{
