@@ -1,0 +1,47 @@
+<div class="simple-calendar">
+  <div class="calendar-heading">
+    <div class="calendar-heading-back-btn-container">
+      <%= link_to calendar.url_for_previous_view do %>
+        <i class="fa fa-arrow-circle-left fa-2x prev-month-btn"></i>
+      <% end %>
+    </div>
+    <div class="calendar-title">
+    <% if calendar.number_of_weeks == 1 %>
+      Week <%= calendar.week_number %>
+    <% else %>
+      Week <%= calendar.week_number %> - <%= calendar.end_week %>
+    <% end %>
+    </div>
+    <div class="calendar-heading-next-btn-container">
+      <%= link_to calendar.url_for_next_view do %>
+        <i class="fa fa-arrow-circle-right fa-2x next-month-btn"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <% date_range.slice(0, 7).each do |day| %>
+          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% date_range.each_slice(7) do |week| %>
+        <tr>
+          <% week.each do |day| %>
+            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+              <% else %>
+                <% block.call day, sorted_events.fetch(day, []) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

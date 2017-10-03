@@ -1,0 +1,316 @@
+.meal-time{
+  padding-top: 6px;
+  padding-bottom: 13px;
+  padding-left: 4px;
+  padding-right: 2px;
+  min-height: 80px;
+  width: 100%;
+
+  .meal-kind {
+    float: left;
+    margin-left: 5px;
+    .meal-icon{
+      padding-left: 0;
+    }
+    .meal-list-add {
+      margin-top: 10px;
+      text-align: right;
+      float: left;
+      
+      .meal-add-link {
+        color: white;
+        text-shadow: 0 0 1px black;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      
+      .meal-add-button{
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 2px;
+        padding-right: 3px;
+        
+      }
+      .meal-list-plus{
+        color: #FFFFFF;
+        font-size: 10px;
+      }
+      .meal-list-cutlery{
+        color: #FFFFFF;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .meal-list-container{
+    
+    .meal-list{
+      margin-bottom: 0;
+      padding-bottom: 0;
+      margin-right: 2px;
+      margin-left: -5px;
+      .meal-container{
+        margin-bottom: 2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: rgba(207, 207, 207, 0.29);
+        border-radius: 3px;
+        a{
+          color: white;
+          text-shadow: 0 0 1px black;
+        }
+      }
+      li{
+        list-style: none;
+      }
+      
+      .meal-delete-container{
+        float: right;
+        margin-top: -19px;
+        color: #911111;
+        font-size: 16px;
+        margin-right: -4px;
+
+        .delete-meal {
+          color: #911111;
+          &:hover{
+            color: red;
+            text-shadow: 0 0 2px #FFA600;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lunch-time{
+  background: #d2dbe0; /* Old browsers */
+  background: -moz-linear-gradient(top, #d2dbe0 0%, #c9e4ff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d2dbe0 0%,#c9e4ff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d2dbe0 0%,#c9e4ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2dbe0', endColorstr='#c9e4ff',GradientType=0 ); /* IE6-9 */
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  .meal-kind{
+    text-shadow: 0 0 8px #726123;
+    .fa-sun-o{
+      color: #FFD000;
+      margin-left: -1px;
+    }
+  }
+}
+
+.dinner-time{
+  background: #3c5d84; /* Old browsers */
+  background: -moz-linear-gradient(top, #3c5d84 0%, #444f77 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #3c5d84 0%,#444f77 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #3c5d84 0%,#444f77 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c5d84', endColorstr='#444f77',GradientType=0 ); /* IE6-9 */
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  .meal-kind{
+    text-shadow: 0 0 8px #B9A358;
+    .fa-moon-o{
+      color: #F8ECBE;
+    }
+  }
+}
+
+.calendar-day{
+  border-radius: 4px;
+  margin: 0;
+  min-height: 160px;
+  // background-color: #30240f;
+  padding-bottom: 0;
+  .calendar-day-number{
+    text-align: center;
+    margin-top: 1px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+    margin-left: 25%;
+    width: 100px;
+    font-weight: bold;
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      margin-left: 20%;
+    }
+    
+  }
+}
+
+.simple-calendar {
+  thead{
+    background-color: #031927;
+    border: 1px solid white;
+    color: #FFFFFF;
+    // text-shadow: 0 0 2px #031927;
+    height: 25px;
+    th{
+      padding-left: 7px;
+      padding-top: 2px;
+      padding-bottom: 2px;  
+    }
+  }
+  td{
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+
+  .prev-month-btn, .next-month-btn{
+    color: #696969;
+    &:hover{
+      text-decoration: none;
+      text-shadow: 0 0 1px #000000;
+    }
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      
+    }
+  }
+  .calendar-heading{
+    a:hover {
+      text-decoration: none;
+    }
+    .calendar-title{
+      font-weight: bold;
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+
+    
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      .calendar-heading-back-btn-container{
+        float: left;
+      }
+      .calendar-title{
+        font-size: 20px;
+        padding-bottom: 6px;
+        float: left;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+  .current-month {
+    background-color: #FFFFFF;
+    .calendar-day{
+      background-color: #EEEEEE;
+    }
+  }
+  .today {
+    // background-color: rgba(63, 110, 103, 0.54);
+    background-color: #FFFFFF;
+    .calendar-day{
+      background-color: #9DD1F1;
+    }
+    .calendar-day-number{
+      color: white;
+      text-shadow: 0 0 5px #031927;
+    }
+  }
+  .prev-month {
+    // background-color: #DFDFDF;
+    background-color: #FFFFFF;
+    .calendar-day{
+      background-color: #CECDCD;
+    }
+  }
+  .next-month {
+    // background-color: #DFDFDF;
+    background-color: #FFFFFF;
+    .calendar-day{
+      background-color: #CECDCD;
+    }
+  }
+
+  .current-month {
+    font-weight: bold;
+  }
+  .next-month { }
+
+  .table {
+    border: 1px solid white;
+    td {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.calendar-container {
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .simple-calendar {
+      .day{
+        height: auto;
+        width: 100%;
+      }
+      .calendar-day-number {
+        text-align: right;
+      }
+      .table {
+        tr {
+          border: 0;
+        }
+      }
+    }
+    
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+      display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee; 
+      position: relative;
+      padding-left: 50%; 
+      min-height: 80px;
+    }
+    
+    td:before { 
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%; 
+      padding-right: 10px; 
+      white-space: nowrap;
+      margin-top: -5px;
+    }
+    
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "Monday"; }
+    td:nth-of-type(2):before { content: "Tuesday"; }
+    td:nth-of-type(3):before { content: "Wednesday"; }
+    td:nth-of-type(4):before { content: "Thursday"; }
+    td:nth-of-type(5):before { content: "Friday"; }
+    td:nth-of-type(6):before { content: "Saturday"; }
+    td:nth-of-type(7):before { content: "Sunday"; }
+
+  }
+}

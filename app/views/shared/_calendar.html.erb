@@ -1,5 +1,25 @@
-<%= month_calendar do |date| %>
-  <%= date.day %>
-  <%= render partial: "meals/list", locals: {kind: :lunch, date: date} %>
-  <%= render partial: "meals/list", locals: {kind: :dinner, date: date} %>
+<% if @mobile %>
+  <%= week_calendar do |date| %>
+    <div class="calendar-day">
+      <div class="calendar-day-number">
+        <%= date.day %>
+      </div>
+      <div class="calendar-meals-lists">
+        <%= render partial: "meals/list", locals: {kind: :lunch, date: date} %>
+        <%= render partial: "meals/list", locals: {kind: :dinner, date: date} %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= month_calendar do |date| %>
+    <div class="calendar-day">
+      <div class="calendar-day-number">
+        <%= date.day %>
+      </div>
+      <div class="calendar-meals-lists">
+        <%= render partial: "meals/list", locals: {kind: :lunch, date: date} %>
+        <%= render partial: "meals/list", locals: {kind: :dinner, date: date} %>
+      </div>
+    </div>
+  <% end %>
 <% end %>

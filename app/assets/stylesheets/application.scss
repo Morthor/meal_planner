@@ -2,29 +2,62 @@
  @import "scaffolds";
  @import "recipes";
  @import "ingredients";
+ @import "meals";
+ @import "home";
  @import "select2";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "bootstrap";
 
+body{
+  margin-top: 70px;
+}
 
-.navbar-custom .nav-item.active .nav-link,
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  body{
+    margin-top: 50px;
+  }
+}
+
 .navbar-custom .nav-item:hover .nav-link {
-  background-color: #9B9B9B;
-  color: #ffffff;
+  text-shadow: 0 0 6px #508AA8;
+  color: #9DD1F1;
 }
 
-.nav-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item .nav-link {
+  color: #C8E0F4;
+}
+
 .nav-custom .nav-item:hover .nav-link {
-  background-color: #9B9B9B;
-  color: #ffffff;
+  text-shadow: 0 0 6px #508AA8;
+  color: #9DD1F1;
 }
 
-.nav-brand-custom:hover {
-  background-color: #9B9B9B;
-  color: #ffffff;
+.nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #508AA8;
 }
 
+.navbar-custom.bg-light {
+  box-shadow: 0 1px 15px;
+  background-color: #031927 !important;
+  color: #C8E0F4;
+}
+
+.navbar-light .navbar-brand.nav-brand-custom {
+  margin-right: 30px;
+  color: white;
+}
+
+.navbar-light .navbar-brand.nav-brand-custom:hover {
+  text-shadow: 0 0 10px white;
+  color: #9DD1F1;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200, 224, 244, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 .navbar-nav {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -32,6 +65,11 @@
     font-size: 13px;
     padding-left: 8px;
     padding-right: 8px;
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      padding-top: 10px;
+    }
   }
 
   .logout-link a.nav-link{
@@ -55,4 +93,8 @@
 .edit-row{
   padding-left: 15px;
   color: #000;
+}
+
+.bg-light{
+  background-color: #E4E3E3 !important;
 }
