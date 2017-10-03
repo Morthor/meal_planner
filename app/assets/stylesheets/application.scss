@@ -21,29 +21,38 @@ only screen and (max-width: 760px),
   }
 }
 
-.navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-  background-color: #9B9B9B;
-  color: #ffffff;
+  text-shadow: 0 0 6px #508AA8;
+  color: #9DD1F1;
 }
 
-.nav-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item .nav-link {
+  color: #C8E0F4;
+}
+
 .nav-custom .nav-item:hover .nav-link {
-  background-color: #9B9B9B;
-  color: #ffffff;
+  text-shadow: 0 0 6px #508AA8;
+  color: #9DD1F1;
 }
 
-.navbar-custom {
-  box-shadow: 0 1px 10px;
+.nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #508AA8;
 }
 
-.nav-brand-custom {
+.navbar-custom.bg-light {
+  box-shadow: 0 1px 15px;
+  background-color: #031927 !important;
+  color: #C8E0F4;
+}
+
+.navbar-light .navbar-brand.nav-brand-custom {
   margin-right: 30px;
+  color: white;
 }
 
-.nav-brand-custom:hover {
-  background-color: #9B9B9B;
-  color: #ffffff;
+.navbar-light .navbar-brand.nav-brand-custom:hover {
+  text-shadow: 0 0 10px white;
+  color: #9DD1F1;
 }
 
 .navbar-nav {

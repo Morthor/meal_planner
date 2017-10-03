@@ -72,9 +72,14 @@
         margin-top: -19px;
         color: #911111;
         font-size: 16px;
+        margin-right: -4px;
 
         .delete-meal {
           color: #911111;
+          &:hover{
+            color: red;
+            text-shadow: 0 0 2px #FFA600;
+          }
         }
       }
     }
@@ -125,7 +130,7 @@
     margin-top: 1px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.85);
-    margin-left: 60px;
+    margin-left: 20%;
     width: 100px;
     font-weight: bold;
   }
@@ -232,10 +237,10 @@
   .table {
     border: 1px solid white;
     td {
-      padding-left: 2px ;
-      padding-right: 2px;
+      padding-left: 0;
+      padding-right: 0;
       padding-top: 0;
-      padding-bottom: 1px;
+      padding-bottom: 0;
     }
   }
 }
