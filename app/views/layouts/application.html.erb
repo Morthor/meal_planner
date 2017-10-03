@@ -23,16 +23,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link <%= 'active' if controller_name == 'home' %>" href="<%= root_path %>">Home</a>
+                  <a class="nav-link <%= 'active' if controller_name == 'home' %>" href="<%= root_path %>"><i class="fa fa-home fa-lg"></i>&nbsp;&nbsp;Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link <%= 'active' if controller_name == 'recipes' %>" href="<%= recipes_path %>">Recipes</a>
+                  <a class="nav-link <%= 'active' if controller_name == 'recipes' %>" href="<%= recipes_path %>"><i class="fa fa-book fa-lg"></i>&nbsp;&nbsp;Recipes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link <%= 'active' if controller_name == 'ingredients' %>" href="<%= ingredients_path %>">Ingredients</a>
+                  <a class="nav-link <%= 'active' if controller_name == 'ingredients' %>" href="<%= ingredients_path %>"><i class="fa fa-list-ul fa-lg"></i>&nbsp;&nbsp;Ingredients</a>
                 </li>
                 <li class="nav-item logout-link">
-                  <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+                  <%= link_to destroy_user_session_path, :method => :delete, class: "nav-link" do %>
+                  <i class="fa fa-sign-out fa-lg"></i>&nbsp;&nbsp;Log out
+                  <% end %>
                 </li>
               </ul>
             </div>
