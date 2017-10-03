@@ -130,18 +130,24 @@
     margin-top: 1px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.85);
-    margin-left: 20%;
+    margin-left: 25%;
     width: 100px;
     font-weight: bold;
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+      margin-left: 20%;
+    }
+    
   }
 }
 
 .simple-calendar {
   thead{
-    background-color: rgba(109, 109, 109, 0.49);
+    background-color: #031927;
     border: 1px solid white;
-    color: white;
-    text-shadow: 0 0 2px black;
+    color: #FFFFFF;
+    // text-shadow: 0 0 2px #031927;
     height: 25px;
     th{
       padding-left: 7px;
@@ -190,9 +196,6 @@
         padding-left: 10px;
         padding-right: 10px;
       }
-      .calendar-heading-next-btn-container{
-        
-      }
     }
   }
   .current-month {
@@ -205,10 +208,11 @@
     // background-color: rgba(63, 110, 103, 0.54);
     background-color: #FFFFFF;
     .calendar-day{
-      background-color: rgba(63, 110, 103, 0.54);
+      background-color: #9DD1F1;
     }
     .calendar-day-number{
       color: white;
+      text-shadow: 0 0 5px #031927;
     }
   }
   .prev-month {
@@ -226,9 +230,6 @@
     }
   }
 
-  .prev-month {
-
-  }
   .current-month {
     font-weight: bold;
   }
