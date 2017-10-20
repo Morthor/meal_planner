@@ -1,0 +1,39 @@
+.shopping-list-create-container {
+  padding-top: 10px;
+  
+}
+
+.shopping-list-items-container {
+  margin-bottom: 20px;
+}
+
+.shopping-list-item-left-section {
+  float: left;
+}
+
+.shopping-list-item-right-section {
+  padding-top: 5px;
+  float: right;
+  a {
+    margin-left: 20px;
+  }
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  .shopping-list-item-left-section {
+    float: none;
+  }
+  
+  .shopping-list-item-right-section {
+    float: none;
+    a {
+      margin-left: 0;
+    }
+    i{
+      float: right;
+      margin-top: -15px;
+    }
+  }
+}
