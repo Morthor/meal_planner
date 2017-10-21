@@ -27,13 +27,14 @@ only screen and (max-width: 760px),
   }
   
   .shopping-list-item-right-section {
-    float: none;
+    float: right;
+    margin-top: -25px;
     a {
       margin-left: 0;
     }
     i{
-      float: right;
-      margin-top: -15px;
+      margin-left: 15px;
+      margin-top: 5px;
     }
   }
 }

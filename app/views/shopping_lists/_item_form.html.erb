@@ -9,7 +9,7 @@
         <%= shopping_list_item_form.select :units, [[ 'Gramos', :grams ], ['Piezas', :pieces]], {}, { class: 'form-control shopping-list-item-units' } %>
       </div>
       <div class="shopping-list-item-right-section">
-        <%= shopping_list_item_form.check_box :bought, class: 'form-control' %>
+        <%= shopping_list_item_form.check_box :bought, class: 'form-check-input' %>
         <% if shopping_list_item.id %>
           <%= link_to shopping_list_item_path(shopping_list_item), method: :delete, remote: true, class: 'delete_shopping_list_item' do %>
             <i class="fa fa-trash fa-lg delete-row"></i>
