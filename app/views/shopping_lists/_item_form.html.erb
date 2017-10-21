@@ -1,7 +1,7 @@
 
 <% @shopping_list.shopping_list_items.each do |shopping_list_item| %>
 <div class="form-group w-100">
-  <li class="list-group-item w-100 shopping-list-item-li">
+  <li class="list-group-item w-100 borderless">
     <%= form.fields_for :shopping_list_items, shopping_list_item do |shopping_list_item_form| %>
       <div class="shopping-list-item-left-section">
         <%= shopping_list_item_form.text_field :name, class: 'form-control', :placeholder => "Ingredient" %>
